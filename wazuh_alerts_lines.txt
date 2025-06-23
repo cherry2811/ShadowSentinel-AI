@@ -1,0 +1,1 @@
+2025-06-22T15:52:14.426+0000 | Wazuh-SIEM | N/A | Wazuh server started. | ossec: Manager started.

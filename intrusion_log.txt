@@ -1,0 +1,8 @@
+2025-06-19 11:25:56.720848 — 🚨 Watchlist process detected: ngrok
+2025-06-19 11:28:11.251765 — 🚨 Watchlist process detected: ngrok
+2025-06-19 11:29:09.950728 — 🚨 Watchlist process detected: ngrok
+2025-06-19 11:31:35.868185 — 🚨 Watchlist process detected: ngrok
+2025-06-19 11:31:47.071337 — 🚨 Watchlist process detected: ngrok
+2025-06-19 11:33:00.635237 — 🚨 Watchlist process detected: ngrok
+2025-06-19 11:35:17.791063 — 🚨 Watchlist process detected: ngrok
+2025-06-19 11:35:20.448464 — 🚨 Watchlist process detected: ngrok

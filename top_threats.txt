@@ -1,0 +1,5 @@
+Wazuh-SIEM | N/A | Wazuh server started. | ossec: Manager started.
+Wazuh-SIEM | N/A | Wazuh server started. | ossec: Manager started.
+Wazuh-SIEM | N/A | Wazuh server started. | ossec: Manager started.
+Wazuh-SIEM | N/A | Wazuh server started. | ossec: Manager started.
+Wazuh-SIEM | N/A | Wazuh server started. | ossec: Manager started.

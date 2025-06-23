@@ -1,0 +1,3 @@
+ShadowSentinel Daily Alert Summary
+
+1. ❌ Error: Command '['ollama', 'run', 'mistral', '\nYou are a cybersecurity analyst AI. Analyze the following Wazuh alert and summarize it in 1 short sentence:\n\n{\n  "description": "2025-06-20 07:43:36 - Test SSH authentication failure detected"\n}\n']' timed out after 30 seconds
