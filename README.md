@@ -1,128 +1,110 @@
-# 🧠 ShadowSentinel AI – Real-Time Cyber Guardian
+# 🛡️ ShadowSentinel AI – Real-Time Cybersecurity Bot
 
-**ShadowSentinel AI** is an elite, real-time cyber defense bot that uses AI to monitor Wazuh security alerts, auto-detect brute-force attacks, block attacker IPs instantly with `iptables`, and summarize threats using a local LLM. It also tracks system health, detects intrusions, generates daily reports, and includes an AI voice assistant named **Hazel**.
+**ShadowSentinel AI** is an advanced, AI-powered cybersecurity system built on top of Wazuh that:
+- Monitors logs in real-time
+- Detects brute-force and suspicious activity
+- Automatically blocks malicious IPs
+- Generates daily reports
+- Speaks alerts via voice assistant (Hazel)
+- Supports face unlock & wake word detection
+- Tracks system usage & suspicious behavior
 
-> 🕵️ Built by [@cherry2811](https://github.com/cherry2811) as a real-world, agentic cybersecurity project powered by automation and AI.
-
----
-
-## 🎯 Features
-
-✅ Real-time brute-force detection using Wazuh logs  
-✅ Automatic IP blocking via `iptables`  
-✅ Alert summarization with LLM (OpenRouter or local model)  
-✅ AI memory: avoids re-blocking known threats  
-✅ Daily summary report and email alerting  
-✅ Hazel AI voice assistant: threat narration + wake word  
-✅ System resource tracker (CPU, RAM, screentime logs)  
-✅ USB & process watchlist intrusion alerts  
-✅ Self-learning threat engine using `threat_memory.json`  
-✅ Beautiful threat dashboard with 7-day trends  
-✅ Stealth mode, vault unlock (face unlock), wake word: `"Hey Shadow"`
+> Built with ❤️ for modern Blue Teamers & SOC Analysts.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Key Features
 
-- **Python 3.12+**
-- **Wazuh SIEM** for log input
-- **iptables** for blocking
-- **FAISS + LangChain + LLM (OpenRouter or Ollama)** for RAG-based threat summaries
-- **Whisper / Vosk / Silero** for voice recognition
-- **Text-to-Speech**: `gTTS`, `speech-dispatcher`, or Silero
-- **Face Recognition** for vault unlock
-
----
-
-## 📁 Folder Structure
-
-wazuh-brute-force-blocker/
-├── brute_force_blocker.py ← Brute force detection + IP block
-├── realtime_monitor.py ← Monitors /var/ossec/logs/alerts.json
-├── summarizer.py ← Summarizes alerts using AI
-├── hazel_voice_assistant.py ← Hazel AI assistant (voice output)
-├── wake_word_hey_shadow.py ← Wake word detection loop
-├── resource_tracker.py ← Tracks CPU, RAM, screentime
-├── threat_dashboard.py ← Generates visual dashboard (HTML)
-├── daily_report.py ← Sends daily reports
-├── intrusion_detector.py ← USB/process watchlist
-├── threat_memory.json ← Stores previously seen threats
-├── email_config.py ← Secure email credentials
+- 🔍 Real-Time Log Monitoring (via Wazuh)
+- 🧠 Brute-Force Detection & IP Auto-Blocking (iptables)
+- 🔊 Voice Alert System (Hazel Assistant)
+- 🧏‍♀️ “Hey Shadow” Wake Word Activation
+- 🧑‍💻 Face Recognition Login
+- 📨 Email Alerting System
+- 📊 Daily Threat Reports
+- 🎥 Suspicious Screen Recording & Stealth Mode
+- 🧠 LLM-Based Threat Summarizer (LangChain, OpenRouter)
+- 🔒 Vault Mode with Face Unlock
+- ☁️ Cloud-Ready (with sync support)
 
 ---
 
-## 🚀 How to Run
+## 📁 Project Structure
 
-### 1. Clone the repo
+ShadowSentinel-AI/
+│
+├── modules/
+│ ├── brute_force_blocker.py
+│ ├── realtime_monitor.py
+│ ├── daily_report.py
+│ ├── intrusion_detector.py
+│ ├── email_alert.py
+│ └── summarizer.py
+│
+├── assistant/
+│ ├── hazel_voice_assistant.py
+│ ├── speak_alerts.py
+│ ├── wake_word_hey_shadow.py
+│
+├── auth/
+│ ├── face_auth.py
+│ ├── vault_unlock.py
+│
+├── utils/
+│ ├── resource_tracker.py
+│ ├── email_config.py
+│
+├── README.md
+└── screenshots/ (demo visuals)
 
-```bash
-git clone https://github.com/cherry2811/ShadowSentinel-AI.git
-cd ShadowSentinel-AI
+yaml
+Copy
+Edit
 
+---
 
-. Create and activate virtual environment
+## ⚙️ Installation & Setup
+
+1. Install Wazuh & configure agent-server communication  
+2. Clone this repo:  
+   ```bash
+   git clone https://github.com/cherry2811/ShadowSentinel-AI.git
+Install dependencies:
+
 bash
-Copy code
-python3 -m venv sentinel-venv
-source sentinel-venv/bin/activate
-
-
-
-Install dependencies
-bash
-Copy code
+Copy
+Edit
 pip install -r requirements.txt
+Update email_config.py with your credentials
 
+Run Hazel or Realtime Monitor to begin protection
 
+📸 Demo & Screenshots
+Add screenshots or demo GIFs in /screenshots folder
+You can also embed a YouTube demo here (later)
 
-Start real-time Wazuh alert monitoring
-bash
-Copy code
-python3 realtime_monitor.py
+🧠 Tech Stack
+Python
 
+Wazuh SIEM
 
+iptables
 
-Run Hazel voice assistant (optional)
-bash
-Copy code
-python3 hazel_voice_assistant.py
+LangChain + LLM (OpenRouter/local)
 
+Face Recognition (OpenCV)
 
+Speech Recognition + pyttsx3
 
-Daily Report Setup (Optional)
-Add your Gmail and receiver email to email_config.py
+Hazel AI Assistant
 
-Setup email_daily_summary.py to run with a daily cron job
+Linux (Ubuntu, Kali)
 
+Email + Cron + Firewall
 
+📫 Contact
+GitHub: cherry2811
 
+Email: charanreddy098@gmail.com
 
-
-
-📊 Threat Dashboard
-Run the dashboard generator:
-
-bash
-Copy code
-python3 threat_dashboard.py
-It will generate dashboard.html showing daily threat scores and top IPs.
-
-🤖 Wake Word + Vault Mode (Advanced)
-Run wake_word_hey_shadow.py to activate wake word: "Hey Shadow"
-
-Vault mode uses face unlock via webcam (see vault_lock.py)
-
-🔐 Security Notes
-All alerts, logs, and threat memory are local
-
-You can extend to cloud storage or external APIs safely
-
-Built for personal/home SOC lab security
-
-👨‍💻 Author
-Made with 💙 by Charan Reddy (cherry2811)
-
-
-
-License
-This project is licensed under the MIT License.
+LinkedIn: linkedin.com/in/charanreddy098
